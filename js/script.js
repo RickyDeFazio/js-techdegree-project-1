@@ -1,53 +1,86 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
+/*
+  Project 1 - Random Quote Generator
+*/
 
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
+/*
+  Created array of quote objects containing: quote, source, citation, and year. 
+*/
 
+const quotes = [
+  {
+    quote: "If you want others to be happy, practice compassion. If you want to be happy, practice compassion.",
+    source: "Dalai Lama",
+    citation: "https://www.developgoodhabits.com/mindfulness-quotes/"
+  },
+  {
+    quote: "When we get too caught up in the busyness of the world, we lose connection with one another -- and ourselves.",
+    source: "Jack Kornfield",
+    citation: "https://www.developgoodhabits.com/mindfulness-quotes/"
+  },
+  {
+    quote: "Let go of your mind and then be mindful. Close your ears and listen!",
+    source: "Jalauddin Rumi",
+    citation: "https://www.developgoodhabits.com/mindfulness-quotes/"
+  },
+  {
+    quote: "Look at other people and ask yourself if you are really seeing them or just your thoughts about them.",
+    source: "Jon Kabat-Zinn",
+    citation: "https://www.developgoodhabits.com/mindfulness-quotes/"
+  },
+  {
+    quote: "When I'm hungry, I eat what I love. When I'm bored, I do something I love. When I'm lonely, I connect with someone I love. When I feel sad, I remember that I am loved.",
+    source: "Michelle May",
+    citation: "https://www.developgoodhabits.com/mindfulness-quotes/"
+  },
+  {
+    quote: "The things that matter most in our lives are not fantastic or grand. They are moments when we touch one another.",
+    source: "Jack Kornfield",
+    citation: "https://www.developgoodhabits.com/mindfulness-quotes/"
+  },
+  {
+    quote: "The first step toward your success is the one 'you' take, not someone else.",
+    source: "Ricky DeFazio",
+    year: 2018
+  },
+  {
+    quote: "The usefulness of having a goal isn't it's eventual attainment, but rather the actions it manifests.",
+    source: "Ricky DeFazio",
+    year: 2018
+  }
+];
 
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
-***/
+/*
+  Chooses a random object from quotes array.
+*/
 
+function getRandomQuote() {
+  let randomNumber = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNumber];
+}
 
+/*
+  1. Stores random quote object in a variable. 
+  2. Builds necessary html used to display chosen information on web page.
+  3. Targets specific html ID to use as location for displaying information on web page.
+*/
 
+function printQuote() {
+  const callQuote = getRandomQuote();
+  let html = '';
+  html += '<p class="quote">' + callQuote.quote + '</p>';
+  html += '<p class="source">' + callQuote.source;
+  if (callQuote.hasOwnProperty("citation")){
+    html += '<span class="citation">' + callQuote.citation + '</span>';
+  }
+  if (callQuote.hasOwnProperty("year")) {
+    html += '<span class="year">' + callQuote.year + '</span>';
+  }
+  html += '</p>';
+  return document.getElementById("quote-box").innerHTML = html;
+}
 
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
-
-
-
-
-/***
-  Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
-
-
-
-
-/***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
-***/
+/*
+  Creates button used to cycle random quotes.
+*/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
