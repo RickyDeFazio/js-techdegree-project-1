@@ -4,7 +4,7 @@
  */
 
 body {
-  background-color: #36b55c;
+  background-color: turquoise;
   color: white;
   font-family: 'Playfair Display', serif;
 }
@@ -24,6 +24,8 @@ body {
   line-height: 1.1;
   position: relative;
   margin: 0;
+  font-family: fantasy;
+  text-shadow: 2px 2px 5px black;
 }
 
 .quote:before, .quote:after {
@@ -51,6 +53,7 @@ body {
   line-height: 1.1;
   text-align: right;
   margin-right: 4em;
+  color: black;
 }
 
 .source:before {
@@ -59,6 +62,8 @@ body {
 
 .citation {
   font-style: italic;
+  color: black;
+
 }
 
 .citation:before {
@@ -69,6 +74,10 @@ body {
 .year:before {
   content: ", ";
   font-style: normal;
+}
+
+.tags {
+  color: black;
 }
 
 #loadQuote {
