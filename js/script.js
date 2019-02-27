@@ -61,7 +61,7 @@ const quotes = [
   Chooses a random object from quotes array.
 */
 
-function getRandomQuote() {
+const getRandomQuote = () => {
   let randomNumber = Math.floor(Math.random() * quotes.length);
   return quotes[randomNumber];
 }
@@ -81,17 +81,17 @@ const autoChangeQuote = window.setInterval(printQuote, 20000);
 
 function printQuote() {
   const callQuote = getRandomQuote();
-  let html = '';
-  html += '<p class="quote">' + callQuote.quote + '</p>';
-  html += '<p class="source">' + callQuote.source;
+  let html = `
+  <p class="quote">${callQuote.quote}</p>
+  <p class="source">${callQuote.source}`;
   if (callQuote.hasOwnProperty("citation")){
-    html += '<span class="citation">' + callQuote.citation + '</span>';
+    html += `<span class="citation">${callQuote.citation}</span>`;
   }
   if (callQuote.hasOwnProperty("year")) {
-    html += '<span class="year">' + callQuote.year + '</span>';
+    html += `<span class="year">${callQuote.year}</span>`;
   }
   if (callQuote.hasOwnProperty("tags")) {
-    html += '<p class="tags">' + "Tags: <strong>" + callQuote.tags + '</strong>'
+    html += `<p class="tags">Tags: <strong>${callQuote.tags}</strong>`
   }
   html += '</p>';
   document.getElementById("quote-box").innerHTML = html;
@@ -102,7 +102,7 @@ function printQuote() {
   Changes color to a random preset of colors.
 */
 
-function changeColor() {
+const changeColor = () => {
   const colors = ["blue", "yellow", "green", "purple", "red", "turquoise", "orange"];
   let colorPicker = Math.floor(Math.random() * colors.length);
   document.getElementById("body").style.background = colors[colorPicker];
