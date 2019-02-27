@@ -4,7 +4,8 @@
  */
 
 body {
-  background-color: turquoise;
+  background-image: url('https://positivepsychologyprogram.com/wp-content/uploads/2017/02/mindfulness-definition.jpg');
+  background-size: cover;
   color: white;
   font-family: 'Playfair Display', serif;
 }
@@ -18,7 +19,7 @@ body {
   line-height: .5;
 }
 
-.quote {
+#quote {
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 1.1;
@@ -76,7 +77,7 @@ body {
   font-style: normal;
 }
 
-.tags {
+.tag {
   color: black;
 }
 
@@ -103,10 +104,10 @@ body {
 }
 
 @media (min-width: 420px) {
-  .quote {
+  #quote {
     font-size: 4rem;
   }
-  .quote:before, .quote:after {
+  #quote:before, .quote:after {
     font-size: 6rem;
   }
   .source {
