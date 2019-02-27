@@ -103,7 +103,7 @@ function printQuote() {
 */
 
 const changeColor = () => {
-  const colors = ["blue", "yellow", "green", "purple", "red", "turquoise", "orange"];
+  const colors = ["blue", "yellow", "green", "purple", "red", "turquoise", "orange", "white"];
   let colorPicker = Math.floor(Math.random() * colors.length);
   document.getElementById("quote").style.color = colors[colorPicker];
 }
