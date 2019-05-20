@@ -1,3 +1,2 @@
 # Random Quote Generator
-
-This project utilizes JavaScript, HTML, and CSS to create a random quote generator.
+This project displays a randomly selected quote each time the user clicks a button.
