@@ -132,6 +132,9 @@ span.citation {
   .tag {
     display: none;
   }
+  #quote {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 750px) {
