@@ -141,4 +141,7 @@ span.citation {
   .citation {
     display: inline-block;
   }
+  #quote {
+    font-size: 3.5em;
+  }
 }
