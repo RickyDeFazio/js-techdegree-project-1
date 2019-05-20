@@ -3,12 +3,18 @@
  * Random Quote Generator - CSS
  */
 
+
+
+
 body {
+  background-color: black;
   background-image: url('../images/mindfulness.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
   color: white;
   font-family: 'Playfair Display', serif;
 }
+  
 
 #quote-box {
   position: absolute;
@@ -27,6 +33,13 @@ body {
   margin: 0;
   font-family: fantasy, impact;
   text-shadow: 2px 2px 5px black;
+  text-align: center;
+}
+
+p.source, 
+p.tag,
+span.citation {
+  color: white;
 }
 
 .quote:before, .quote:after {
@@ -112,5 +125,21 @@ body {
   }
   .source {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .tag {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .citation {
+    display: none;
+  }
+
+  #quote {
+    font-size: 2.75em;
   }
 }
