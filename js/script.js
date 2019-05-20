@@ -5,6 +5,7 @@
 /*
   Created array of quote objects containing: quote, source, citation, and year. 
 */
+"use strict";
 
 const quotes = [
   {
