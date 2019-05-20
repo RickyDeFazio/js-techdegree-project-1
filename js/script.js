@@ -1,3 +1,5 @@
+"use strict";
+
 /*
   Project 1 - Random Quote Generator
 */
@@ -5,7 +7,7 @@
 /*
   Created array of quote objects containing: quote, source, citation, and year. 
 */
-"use strict";
+
 
 const quotes = [
   {
