@@ -82,7 +82,13 @@ const changeColor = (): void => {
     'white',
   ];
 
-  document.getElementById('quote').style.color = colors[randomIndex(colors)];
+  const quoteElement: HTMLElement | null = document.getElementById('quote');
+
+  if (quoteElement) {
+    quoteElement.style.color = colors[randomIndex(colors)];
+  } else {
+    console.log('An element with the ID of "quote" does not exist.');
+  }
 };
 
 const displayQuote = (): void => {
@@ -102,12 +108,25 @@ const displayQuote = (): void => {
   }
   html += '</p>';
 
-  document.getElementById('quote-box').innerHTML = html;
+  const quoteBox: HTMLElement | null = document.getElementById('quote-box');
+
+  if (quoteBox) {
+    quoteBox.innerHTML = html;
+  } else {
+    console.log('An element with the ID of "quote-box" does not exist.');
+  }
+
   changeColor();
 };
 
 const autoChangeQuote: number = setInterval(displayQuote, 20000);
 
-document
-  .getElementById('loadQuote')
-  .addEventListener('click', displayQuote, false);
+const loadQuoteElement: HTMLElement | null = document.getElementById(
+  'loadQuote'
+);
+
+if (loadQuoteElement) {
+  loadQuoteElement.addEventListener('click', displayQuote, false);
+} else {
+  console.log('An element with the ID of "loadQuote" does not exist.');
+}

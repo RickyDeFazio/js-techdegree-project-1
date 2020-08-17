@@ -63,7 +63,13 @@ var changeColor = function () {
         'orange',
         'white',
     ];
-    document.getElementById('quote').style.color = colors[randomIndex(colors)];
+    var quoteElement = document.getElementById('quote');
+    if (quoteElement) {
+        quoteElement.style.color = colors[randomIndex(colors)];
+    }
+    else {
+        console.log('An element with the ID of "quote" does not exist.');
+    }
 };
 var displayQuote = function () {
     var callQuote = getRandomQuote();
@@ -78,10 +84,20 @@ var displayQuote = function () {
         html += "<p class=\"tag\">Tag: <strong>" + callQuote.tag + "</strong>";
     }
     html += '</p>';
-    document.getElementById('quote-box').innerHTML = html;
+    var quoteBox = document.getElementById('quote-box');
+    if (quoteBox) {
+        quoteBox.innerHTML = html;
+    }
+    else {
+        console.log('An element with the ID of "quote-box" does not exist.');
+    }
     changeColor();
 };
 var autoChangeQuote = setInterval(displayQuote, 20000);
-document
-    .getElementById('loadQuote')
-    .addEventListener('click', displayQuote, false);
+var loadQuoteElement = document.getElementById('loadQuote');
+if (loadQuoteElement) {
+    loadQuoteElement.addEventListener('click', displayQuote, false);
+}
+else {
+    console.log('An element with the ID of "loadQuote" does not exist.');
+}
