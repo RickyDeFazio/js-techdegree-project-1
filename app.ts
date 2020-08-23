@@ -6,6 +6,7 @@ interface Quote {
   tag: string;
 }
 
+// Data
 const quotes: Array<Quote> = [
   {
     quote:
